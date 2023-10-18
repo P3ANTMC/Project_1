@@ -6,6 +6,7 @@ email: pean.tmc@seznam.cz
 discord: PETR H.
 """
 
+
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer,
 Fossil Butte is a ruggedly impressive
@@ -42,7 +43,7 @@ users = {
     "liz": "pass123"
     }
 
-#initial variables
+# initial variables
 number_of_texts = len(TEXTS)
 line = "-" * 40
 
@@ -51,6 +52,13 @@ username = input("username: ".capitalize())
 password = input("password: ".capitalize())
 print(line)
 
+# members verification
 if username in users.keys() and password in users.values():
     print(f"Welcome to the app, {username}")
-    print
+    print(f"We have {number_of_texts} texts to be analyzed.")
+    print(line)
+else:
+    print("unregistered user, terminating the program..")
+    quit()    
+
+user_choice = input(f"Enter a number btw. 1 and {number_of_texts} to select: ")
