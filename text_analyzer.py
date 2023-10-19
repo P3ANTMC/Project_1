@@ -44,7 +44,7 @@ users = {
     }
 
 # initial variables
-number_of_texts = len(TEXTS)
+number_of_texts = (len(TEXTS))
 line = "-" * 40
 
 # user inputs
@@ -61,4 +61,16 @@ else:
     print("unregistered user, terminating the program..")
     quit()    
 
-user_choice = input(f"Enter a number btw. 1 and {number_of_texts} to select: ")
+# user selects the desired text
+user_choice = (input(f"Enter a number btw. 1 and {number_of_texts} to select: "))
+print(line)
+
+if not user_choice.isnumeric():
+    print(f"""Your input '{user_choice}' isn't a numeric value,
+        terminating the program.."""
+    )
+    quit()
+elif int(user_choice) not in range(1, (number_of_texts + 1)):
+    print(f"Text number '{int(user_choice)}' wasn't found, terminating the program..")
+    quit()
+
