@@ -48,18 +48,19 @@ number_of_texts = (len(TEXTS))
 line = "-" * 40
 
 # user inputs
-username = input("username: ".capitalize())
-password = input("password: ".capitalize())
-print(line)
+###username = input("username: ".capitalize())
+###password = input("password: ".capitalize())
+###print(line)
 
 # members verification
-if username in users.keys() and password in users.values():
-    print(f"Welcome to the app, {username}")
-    print(f"We have {number_of_texts} texts to be analyzed.")
-    print(line)
-else:
-    print("unregistered user, terminating the program..")
-    quit()    
+###if username in users.keys() and password in users.values():
+    ###print(f"Welcome to the app, {username}")
+    ###print(f"We have {number_of_texts} texts to be analyzed.")
+    ###print(line)
+###else:
+    ###print("unregistered user, terminating the program..")
+    ###quit()
+      
 
 # user selects the desired text
 user_choice = (input(f"Enter a number btw. 1 and {number_of_texts} to select: "))
@@ -73,4 +74,11 @@ if not user_choice.isnumeric():
 elif int(user_choice) not in range(1, (number_of_texts + 1)):
     print(f"Text number '{int(user_choice)}' wasn't found, terminating the program..")
     quit()
+
+selected_text = TEXTS[int(user_choice) - 1]
+
+dirty_words = selected_text.split()
+
+print(dirty_words)
+
 
