@@ -77,8 +77,4 @@ elif int(user_choice) not in range(1, (number_of_texts + 1)):
 
 selected_text = TEXTS[int(user_choice) - 1]
 
-dirty_words = selected_text.split()
-
-print(dirty_words)
-
 
