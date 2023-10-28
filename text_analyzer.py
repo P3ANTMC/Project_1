@@ -59,7 +59,7 @@ if users.get(username) == (password):
           f"We have {number_of_texts} texts to be analyzed.", line, sep="\n"
     )
 else:
-    print(f"Unregistered user, terminating the program..")
+    print(f"Unregistered user, \nterminating the program..")
     quit()
       
 # user selects the desired text
@@ -73,7 +73,7 @@ if not user_choice.isnumeric():
     quit()
 elif int(user_choice) not in range(1, (number_of_texts + 1)):
     print(
-        f"Text number {int(user_choice)} wasn't found,"
+        f"Text number {int(user_choice)} wasn't found,\n"
         f"terminating the program.."
     )
     quit()
@@ -85,16 +85,12 @@ for word in selected_text:
     clean_word = word.strip(",./;'<>?:!@#$%&*")
     cleaned_text.append(clean_word)
 
-
-
-
-# the word counts variables
+# word counts variables
 titlecases_words = 0
 uppercases_words = 0
 lowercase_words = 0
 numeric_strings = 0
 sum_numbers = []
-
 
 for word in cleaned_text:
     if word.istitle():
@@ -108,8 +104,6 @@ for word in cleaned_text:
         sum_numbers.append(int(word))
 
 # print results
-
-    
 print(
     f"There are {len(cleaned_text)} words in the selected text.",
     f"There are {titlecases_words} titlecase words.", 
@@ -128,7 +122,6 @@ for word in cleaned_text:
     
     if length in word_lengths:
         word_lengths[length] += 1
-
     else:
         word_lengths[length] = 1
 
@@ -145,3 +138,5 @@ for length, quantity in sorted(word_lengths.items()):
     
 
 
+
+# Předem díky za zpětnou vazbu. Petr
